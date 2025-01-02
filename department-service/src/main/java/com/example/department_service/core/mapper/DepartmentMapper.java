@@ -19,7 +19,7 @@ public interface DepartmentMapper {
     List<DepartmentDetailsResponseDTO> toDepartmentDetailsResponseDTO(List<Department> department);
 
     DepartmentResponseDTO toDepartmentResponseDTO(Department department);
-    Department toEntity(DepartmentRequestDTO departmentRequestDTO);
+    Department fromDepartmentRequestDTO(DepartmentRequestDTO departmentRequestDTO);
 
 
 

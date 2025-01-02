@@ -57,16 +57,13 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
 
         // Map DTO to Entity
-        Department department = departmentMapper.toEntity(departmentRequestDTO);
+        Department department = departmentMapper.fromDepartmentRequestDTO(departmentRequestDTO);
 
         // Save Entity
         Department savedDepartment = departmentRepository.save(department);
 
-        // Map Entity to Response DTO
-        DepartmentResponseDTO responseDTO = departmentMapper.toDepartmentResponseDTO(savedDepartment);
-
         // Return Response
-        return responseDTO;
+        return departmentMapper.toDepartmentResponseDTO(savedDepartment);
     }
 
 

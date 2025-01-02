@@ -22,25 +22,25 @@ public class Controller {
     private final DepartmentService departmentService;
     private final DepartmentVOMapper departmentVoMapper;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<DepartmentDetailsResponseVO> getAllDepartmentsDetails() {
         return departmentVoMapper.toDepartmentDetailsResponseVO(departmentService.getAllDepartmentsDetails());
 
     }
 
     @GetMapping("/{id}")
-    public DepartmentResponseVO getDepartmentNameById(@PathVariable("id") Long id){
+    public DepartmentResponseVO getDepartmentNameById(@PathVariable("id") Long id) {
         return departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentNameById(id));
 
     }
 
     @GetMapping("/code/{code}")
-    public DepartmentResponseVO getDepartmentByCode(@PathVariable("code") String code){
+    public DepartmentResponseVO getDepartmentByCode(@PathVariable("code") String code) {
         return departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentByCode(code));
     }
 
-    @PostMapping
-    public DepartmentResponseVO createDepartment(@RequestBody DepartmentRequestVO departmentRequestVO){
+    @PostMapping("/create")
+    public DepartmentResponseVO createDepartment(@RequestBody DepartmentRequestVO departmentRequestVO) {
 
         // Map VO to DTO
         DepartmentRequestDTO departmentRequestDTO = departmentVoMapper.toDepartmentRequestDTO(departmentRequestVO);

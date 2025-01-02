@@ -32,6 +32,12 @@ public interface DepartmentVOMapper {
 
 
     DepartmentResponseVO toDepartmentResponseVO(DepartmentResponseDTO departmentResponseDTO);
+
+
+
+
+    @Mapping(target = "departmentDescription", source = "description")
+    @Mapping(target = "departmentCode", source = "code")
     DepartmentRequestDTO toDepartmentRequestDTO(DepartmentRequestVO departmentRequestVO);
 
 

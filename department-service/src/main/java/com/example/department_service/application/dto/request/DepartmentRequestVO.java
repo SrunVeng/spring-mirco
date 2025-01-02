@@ -12,7 +12,8 @@ public class DepartmentRequestVO {
 
     @NotEmpty
     private String departmentName;
-    private String departmentDescription;
+    private String description;
     @NotEmpty
-    private String departmentCode;
+    private String code;
+
 }
