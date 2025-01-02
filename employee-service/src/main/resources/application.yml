@@ -3,10 +3,10 @@ spring:
     name: department-service
 
   datasource:
-    url: jdbc:h2:mem:employee
+    url: jdbc:h2:mem:dbtest
     driver-class-name: org.h2.Driver
-    username: employee
-    password: E@123
+    username: dbtest
+    password: D@123
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect

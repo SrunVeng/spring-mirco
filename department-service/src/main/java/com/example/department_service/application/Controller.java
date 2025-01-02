@@ -4,6 +4,7 @@ package com.example.department_service.application;
 import com.example.department_service.application.dto.request.DepartmentRequestVO;
 import com.example.department_service.application.dto.response.DepartmentDetailsResponseVO;
 import com.example.department_service.application.dto.response.DepartmentResponseVO;
+import com.example.department_service.application.dto.response.EmployeeDetailsResponseVO;
 import com.example.department_service.application.mapper.DepartmentVOMapper;
 import com.example.department_service.core.DepartmentService;
 
@@ -35,8 +36,11 @@ public class Controller {
     }
 
     @GetMapping("/code/{code}")
-    public DepartmentResponseVO getDepartmentByCode(@PathVariable("code") String code) {
-        return departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentByCode(code));
+    public DepartmentDetailsResponseVO getDepartmentByCode(@PathVariable("code") String code) {
+
+        return departmentVoMapper.toDepartmentDetailsResponseVO(departmentService.getDepartmentByCode(code));
+
+
     }
 
     @PostMapping("/create")

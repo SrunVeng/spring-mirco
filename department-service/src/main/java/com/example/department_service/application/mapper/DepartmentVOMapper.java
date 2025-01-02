@@ -4,9 +4,11 @@ package com.example.department_service.application.mapper;
 import com.example.department_service.application.dto.request.DepartmentRequestVO;
 import com.example.department_service.application.dto.response.DepartmentDetailsResponseVO;
 import com.example.department_service.application.dto.response.DepartmentResponseVO;
+import com.example.department_service.application.dto.response.EmployeeDetailsResponseVO;
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
+import com.example.department_service.core.dto.response.EmployeeDetailsResponseDTO;
 import com.example.department_service.infrastructure.entity.Department;
 import org.mapstruct.*;
 
@@ -41,7 +43,7 @@ public interface DepartmentVOMapper {
     DepartmentRequestDTO toDepartmentRequestDTO(DepartmentRequestVO departmentRequestVO);
 
 
-
+    List<EmployeeDetailsResponseVO> toEmployeeListDetailsResponseVO(List<EmployeeDetailsResponseDTO> employeeDetailsResponseDTO);
 
 
 

@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -15,5 +17,6 @@ public class DepartmentDetailsResponseDTO {
     private  String departmentName;
     private  String departmentDescription;
     private  String departmentCode;
+    private List<EmployeeDetailsResponseDTO> employeeDetailsResponseDTO;
 
 }

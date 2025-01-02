@@ -28,7 +28,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public List<DepartmentDetailsResponseDTO> getAllDepartmentsDetails() {
         List<Department> departmentList = departmentRepository.findAll();
-        return departmentMapper.toDepartmentDetailsResponseDTO(departmentList);
+        return departmentMapper.toListDepartmentDetailsResponseDTO(departmentList);
     }
 
     @Override
@@ -38,15 +38,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public DepartmentResponseDTO getDepartmentByCode(String code) {
+    public DepartmentDetailsResponseDTO getDepartmentByCode(String code) {
+
         Department department = departmentRepository.findByDepartmentCode(code);
+        return departmentMapper.toDepartmentDetailsResponseDTO(department);
 
-        ResponseEntity<EmployeeDetailsResponseDTO> employeeDetailsResponseDTOResponseEntity =
-                restTemplate.getForEntity("http://localhost:8081/employees/" + department.getEmployeeId(), EmployeeDetailsResponseDTO.class);
-
-        employeeDetailsResponseDTOResponseEntity.getBody();
-
-        return departmentMapper.toDepartmentResponseDTO(department);
     }
 
     @Override

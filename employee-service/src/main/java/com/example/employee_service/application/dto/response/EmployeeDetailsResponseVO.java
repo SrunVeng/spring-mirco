@@ -1,4 +1,5 @@
-package com.example.department_service.application.dto.response;
+package com.example.employee_service.application.dto.response;
+
 
 
 import lombok.AllArgsConstructor;
@@ -10,9 +11,12 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class DepartmentDetailsResponseVO {
+public class EmployeeDetailsResponseVO {
 
-    private String departmentName;
-    private String description;
-    private String code;
+
+    private String firstName;
+    private String lastName;
+    private String email;
+
+
 }

@@ -12,6 +12,6 @@ import lombok.ToString;
 public class DepartmentResponseDTO {
 
     private  String departmentName;
-    private EmployeeDetailsResponseDTO employeeDetailsResponseDTO;
+
 
 }

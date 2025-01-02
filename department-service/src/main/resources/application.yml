@@ -3,9 +3,9 @@ spring:
     name: department-service
 
   datasource:
-    url: jdbc:h2:mem:department
+    url: jdbc:h2:mem:dbtest
     driver-class-name: org.h2.Driver
-    username: department
+    username: dbtest
     password: D@123
   h2:
     console:

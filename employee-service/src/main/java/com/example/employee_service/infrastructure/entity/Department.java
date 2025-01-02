@@ -1,4 +1,4 @@
-package com.example.department_service.infrastructure.entity;
+package com.example.employee_service.infrastructure.entity;
 
 
 import jakarta.persistence.*;
@@ -30,5 +30,6 @@ public class Department {
     @OneToMany
     @JoinColumn(name = "department_id")
     private List<Employee> employees;
+
 
 }

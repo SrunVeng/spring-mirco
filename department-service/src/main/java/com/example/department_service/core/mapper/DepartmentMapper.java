@@ -16,7 +16,9 @@ public interface DepartmentMapper {
 
     // target nameMethod(source)
 
-    List<DepartmentDetailsResponseDTO> toDepartmentDetailsResponseDTO(List<Department> department);
+    List<DepartmentDetailsResponseDTO> toListDepartmentDetailsResponseDTO(List<Department> department);
+
+    DepartmentDetailsResponseDTO toDepartmentDetailsResponseDTO(Department department);
 
     DepartmentResponseDTO toDepartmentResponseDTO(Department department);
     Department fromDepartmentRequestDTO(DepartmentRequestDTO departmentRequestDTO);

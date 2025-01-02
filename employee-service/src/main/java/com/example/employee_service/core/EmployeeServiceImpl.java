@@ -1,42 +1,22 @@
-package com.example.department_service.core;
+package com.example.employee_service.core;
 
 
-import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
-import com.example.department_service.core.mapper.DepartmentMapper;
-import com.example.department_service.infrastructure.entity.Department;
-import com.example.department_service.infrastructure.repository.DepartmentRepository;
+import com.example.employee_service.core.dto.response.EmployeeDetailsResponseDTO;
+import com.example.employee_service.core.mapper.EmployeeMapper;
+import com.example.employee_service.infrastructure.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 
 @Service
 @RequiredArgsConstructor
-public class DepartmentServiceImpl implements DepartmentService {
+public class EmployeeServiceImpl implements EmployeeService {
 
-    private final DepartmentRepository departmentRepository;
-    private final DepartmentMapper departmentMapper;
-
+    private final EmployeeRepository employeeRepository;
+    private final EmployeeMapper employeeMapper;
 
     @Override
-    public List<DepartmentDetailsResponseDTO> getAllDepartmentsDetails() {
-
-        List<Department> departmentList = departmentRepository.findAll();
-       // System.out.println(departmentList);
-        List<DepartmentDetailsResponseDTO> DepartmentDetailsResponseDTO = departmentMapper.toDepartmentDetailsResponseDTO(departmentList);
-      //  System.out.println(DepartmentDetailsResponseDTO);
-        return DepartmentDetailsResponseDTO;
-
-
-
+    public EmployeeDetailsResponseDTO getEmployeeById(Long id) {
+        return employeeMapper.toEmployeeDetailsResponseDTO(employeeRepository.findById(id).orElseThrow());
     }
-
-
-
-
-
-
-
-
 }

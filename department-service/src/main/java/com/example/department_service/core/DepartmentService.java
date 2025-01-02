@@ -10,7 +10,7 @@ public interface DepartmentService {
 
     List<DepartmentDetailsResponseDTO> getAllDepartmentsDetails();
     DepartmentResponseDTO getDepartmentNameById(Long id);
-    DepartmentResponseDTO getDepartmentByCode(String code);
+    DepartmentDetailsResponseDTO getDepartmentByCode(String code);
     DepartmentResponseDTO createDepartment(DepartmentRequestDTO departmentRequestDTO);
 
 }

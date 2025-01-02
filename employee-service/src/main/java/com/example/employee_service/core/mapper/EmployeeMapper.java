@@ -1,8 +1,9 @@
 package com.example.employee_service.core.mapper;
 
 
-import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
-import com.example.department_service.infrastructure.entity.Department;
+
+import com.example.employee_service.core.dto.response.EmployeeDetailsResponseDTO;
+import com.example.employee_service.infrastructure.entity.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;
@@ -12,9 +13,11 @@ import java.util.List;
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface DepartmentMapper {
+public interface EmployeeMapper {
 
-    List<DepartmentDetailsResponseDTO> toDepartmentDetailsResponseDTO(List<Department> department);
+
+
+    EmployeeDetailsResponseDTO toEmployeeDetailsResponseDTO(Employee employee);
 
 
 
