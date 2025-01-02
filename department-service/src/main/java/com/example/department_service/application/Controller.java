@@ -22,7 +22,10 @@ public class Controller {
 
     @GetMapping
     public List<DepartmentDetailsResponseVO> getAllDepartmentsDetails() {
-        return departmentVoMapper.toDepartmentDetailsResponseVO(departmentService.getAllDepartmentsDetails());
+
+        List<DepartmentDetailsResponseVO> departmentDetailsResponseVOList =departmentVoMapper.toDepartmentDetailsResponseVO(departmentService.getAllDepartmentsDetails());
+       // System.out.println(departmentDetailsResponseVOList);
+        return departmentDetailsResponseVOList;
 
     }
 

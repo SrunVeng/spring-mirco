@@ -17,9 +17,9 @@ import java.util.List;
 public interface DepartmentVOMapper {
 
 
-//    @Mapping(target = "departmentName", source = "departmentName")
-//    @Mapping(target = "description", source = "departmentDescription")
-//    @Mapping(target = "code", source = "departmentCode")
+    @Mapping(target = "departmentName", source = "departmentName")
+    @Mapping(target = "description", source = "departmentDescription")
+    @Mapping(target = "code", source = "departmentCode")
     List<DepartmentDetailsResponseVO> toDepartmentDetailsResponseVO(List<DepartmentDetailsResponseDTO> departmentDetailsResponseDTO);
 
 

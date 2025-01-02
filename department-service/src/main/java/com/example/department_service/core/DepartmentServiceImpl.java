@@ -23,8 +23,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     public List<DepartmentDetailsResponseDTO> getAllDepartmentsDetails() {
 
         List<Department> departmentList = departmentRepository.findAll();
+       // System.out.println(departmentList);
+        List<DepartmentDetailsResponseDTO> DepartmentDetailsResponseDTO = departmentMapper.toDepartmentDetailsResponseDTO(departmentList);
+      //  System.out.println(DepartmentDetailsResponseDTO);
+        return DepartmentDetailsResponseDTO;
 
-        return departmentMapper.toDepartmentDetailsResponseDTO(departmentList);
 
 
 
