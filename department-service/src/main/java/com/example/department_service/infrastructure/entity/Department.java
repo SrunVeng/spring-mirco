@@ -23,4 +23,6 @@ public class Department {
     @Column(nullable = false, unique = true)
     private String departmentCode;
 
+    private Long employeeId;
+
 }

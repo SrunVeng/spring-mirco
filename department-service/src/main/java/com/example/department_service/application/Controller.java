@@ -24,26 +24,19 @@ public class Controller {
 
     @GetMapping
     public List<DepartmentDetailsResponseVO> getAllDepartmentsDetails() {
-
-        List<DepartmentDetailsResponseVO> departmentDetailsResponseVOList =departmentVoMapper.toDepartmentDetailsResponseVO(departmentService.getAllDepartmentsDetails());
-       // System.out.println(departmentDetailsResponseVOList);
-        return departmentDetailsResponseVOList;
+        return departmentVoMapper.toDepartmentDetailsResponseVO(departmentService.getAllDepartmentsDetails());
 
     }
 
     @GetMapping("/{id}")
     public DepartmentResponseVO getDepartmentNameById(@PathVariable("id") Long id){
-
-        DepartmentResponseVO departmentResponseVO =departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentNameById(id));
-        return departmentResponseVO;
+        return departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentNameById(id));
 
     }
 
     @GetMapping("/code/{code}")
     public DepartmentResponseVO getDepartmentByCode(@PathVariable("code") String code){
-
-        DepartmentResponseVO departmentResponseVO = departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentByCode(code));
-        return departmentResponseVO;
+        return departmentVoMapper.toDepartmentResponseVO(departmentService.getDepartmentByCode(code));
     }
 
     @PostMapping
