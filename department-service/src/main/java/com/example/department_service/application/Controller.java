@@ -45,10 +45,6 @@ public class Controller {
         return departmentResponseVO;
     }
 
-    @PostMapping
-    public DepartmentResponseVO createDepartment(@RequestBody DepartmentRequestVO departmentRequestVO){
 
-        DepartmentResponseVO departmentResponseVO = departmentVoMapper.toDepartmentRequestVO(departmentService.createDepartment(departmentRequestVO));
-    }
 
 }

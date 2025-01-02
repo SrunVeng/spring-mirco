@@ -11,6 +11,6 @@ public interface DepartmentService {
     List<DepartmentDetailsResponseDTO> getAllDepartmentsDetails();
     DepartmentResponseDTO getDepartmentNameById(Long id);
     DepartmentResponseDTO getDepartmentByCode(String code);
-    DepartmentRequestDTO createDepartment(DepartmentRequestDTO departmentRequestDTO);
+//   DepartmentRequestDTO createDepartment(DepartmentRequestDTO departmentRequestDTO);
 
 }

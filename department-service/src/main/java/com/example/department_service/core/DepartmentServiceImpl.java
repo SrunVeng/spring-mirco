@@ -48,12 +48,12 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentResponseDTO;
     }
 
-    @Override
-    public DepartmentRequestDTO createDepartment(DepartmentRequestDTO departmentRequestDTO) {
-        if (departmentRepository.isExistsByDepartmentCode(departmentRequestDTO.getDepartmentCode())){
-            throw new RuntimeException("Department code already exists");
-        }
-
-    }
+//    @Override
+//    public DepartmentRequestDTO createDepartment(DepartmentRequestDTO departmentRequestDTO) {
+//        if (departmentRepository.isExistsByDepartmentCode(departmentRequestDTO.getDepartmentCode())){
+//            throw new RuntimeException("Department code already exists");
+//        }
+//
+//    }
 
 }

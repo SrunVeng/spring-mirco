@@ -20,6 +20,5 @@ public interface DepartmentMapper {
     List<DepartmentDetailsResponseDTO> toDepartmentDetailsResponseDTO(List<Department> department);
 
     DepartmentResponseDTO toDepartmentResponseDTO(Department department);
-    DepartmentRequestDTO toDepartmentRequestDTO(Department department);
 
 }
