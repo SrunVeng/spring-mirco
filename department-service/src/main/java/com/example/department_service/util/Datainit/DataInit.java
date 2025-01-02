@@ -14,7 +14,6 @@ public class DataInit {
     private final DepartmentRepository departmentRepository;
 
 
-
     @PostConstruct
     public void init() {
         Department department1 = Department.builder()

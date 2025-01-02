@@ -41,7 +41,7 @@ public class DataInit {
                 .departmentCode("B-005")
                 .departmentDescription("SALES Department")
                 .departmentName("SALES")
-                .build(); 
+                .build();
 
         departmentRepository.saveAll(List.of(department1, department2, department3, department4, department5));
     }

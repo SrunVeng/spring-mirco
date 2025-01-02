@@ -23,6 +23,11 @@ public class Department {
     private String departmentCode;
 
 
+    //Employee Entity
+    // id
+    // first name
+    // last name
+    // email (Unique , not null)
 
 
 }
