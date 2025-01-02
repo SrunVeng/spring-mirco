@@ -7,7 +7,10 @@ import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
 import com.example.department_service.infrastructure.entity.Department;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
@@ -17,19 +20,10 @@ import java.util.List;
 public interface DepartmentVOMapper {
 
 
-
-    @IterableMapping(qualifiedByName = "toDepartmentDetailsResponseVO")
+//    @Mapping(target = "departmentName", source = "departmentName")
+//    @Mapping(target = "description", source = "departmentDescription")
+//    @Mapping(target = "code", source = "departmentCode")
     List<DepartmentDetailsResponseVO> toDepartmentDetailsResponseVO(List<DepartmentDetailsResponseDTO> departmentDetailsResponseDTO);
-
-
-    @Named("toDepartmentDetailsResponseVO")
-    @Mapping(target = "departmentName", source = "departmentName")
-    @Mapping(target = "description", source = "departmentDescription")
-    @Mapping(target = "code", source = "departmentCode")
-    DepartmentDetailsResponseVO toDepartmentDetailsResponseVO(DepartmentDetailsResponseDTO departmentDetailsResponseDTO);
-
-
-
     DepartmentResponseVO toDepartmentResponseVO(DepartmentResponseDTO departmentResponseDTO);
 
 

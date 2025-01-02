@@ -5,9 +5,7 @@ import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
 import com.example.department_service.infrastructure.entity.Department;
-import org.mapstruct.Mapper;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -17,6 +15,7 @@ import java.util.List;
 public interface DepartmentMapper {
 
     // target nameMethod(source)
+
     List<DepartmentDetailsResponseDTO> toDepartmentDetailsResponseDTO(List<Department> department);
 
     DepartmentResponseDTO toDepartmentResponseDTO(Department department);

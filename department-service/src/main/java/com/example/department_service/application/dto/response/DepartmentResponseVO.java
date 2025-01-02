@@ -13,4 +13,5 @@ public class DepartmentResponseVO {
 
     private String departmentName;
 
+
 }
