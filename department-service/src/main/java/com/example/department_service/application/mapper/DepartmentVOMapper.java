@@ -1,6 +1,7 @@
 package com.example.department_service.application.mapper;
 
 
+import com.example.department_service.application.dto.request.DepartmentRequestVO;
 import com.example.department_service.application.dto.response.DepartmentDetailsResponseVO;
 import com.example.department_service.application.dto.response.DepartmentResponseVO;
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
@@ -25,6 +26,8 @@ public interface DepartmentVOMapper {
 //    @Mapping(target = "code", source = "departmentCode")
     List<DepartmentDetailsResponseVO> toDepartmentDetailsResponseVO(List<DepartmentDetailsResponseDTO> departmentDetailsResponseDTO);
     DepartmentResponseVO toDepartmentResponseVO(DepartmentResponseDTO departmentResponseDTO);
+    DepartmentRequestDTO toDepartmentRequestDTO(DepartmentRequestVO departmentRequestVO);
+
 
 
 

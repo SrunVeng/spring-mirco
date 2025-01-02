@@ -8,6 +8,7 @@ import com.example.department_service.application.mapper.DepartmentVOMapper;
 import com.example.department_service.core.DepartmentService;
 
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
+import com.example.department_service.core.dto.response.DepartmentResponseDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,7 +46,18 @@ public class Controller {
         return departmentResponseVO;
     }
 
+    @PostMapping
+    public DepartmentResponseVO createDepartment(@RequestBody DepartmentRequestVO departmentRequestVO){
 
+        // Map VO to DTO
+        DepartmentRequestDTO departmentRequestDTO = departmentVoMapper.toDepartmentRequestDTO(departmentRequestVO);
+
+        // Call service to create department
+        DepartmentResponseDTO departmentResponseDTO = departmentService.createDepartment(departmentRequestDTO);
+
+        // Map DTO to VO
+        return departmentVoMapper.toDepartmentResponseVO(departmentResponseDTO);
+    }
 
 
 }

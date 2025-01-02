@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -48,12 +47,25 @@ public class DepartmentServiceImpl implements DepartmentService {
         return departmentResponseDTO;
     }
 
-//    @Override
-//    public DepartmentRequestDTO createDepartment(DepartmentRequestDTO departmentRequestDTO) {
-//        if (departmentRepository.isExistsByDepartmentCode(departmentRequestDTO.getDepartmentCode())){
-//            throw new RuntimeException("Department code already exists");
-//        }
-//
-//    }
+    @Override
+    public DepartmentResponseDTO createDepartment(DepartmentRequestDTO departmentRequestDTO) {
+
+        if (departmentRepository.existsByDepartmentCode(departmentRequestDTO.getDepartmentCode())) {
+            throw new RuntimeException("Department code already exists");
+        }
+
+        // Map DTO to Entity
+        Department department = departmentMapper.toEntity(departmentRequestDTO);
+
+        // Save Entity
+        Department savedDepartment = departmentRepository.save(department);
+
+        // Map Entity to Response DTO
+        DepartmentResponseDTO responseDTO = departmentMapper.toDepartmentResponseDTO(savedDepartment);
+
+        // Return Response
+        return responseDTO;
+    }
+
 
 }
