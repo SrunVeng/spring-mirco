@@ -11,6 +11,7 @@ import lombok.*;
 @Entity
 @Builder
 @Table(name="departments")
+@ToString
 public class Department {
 
 
@@ -19,8 +20,7 @@ public class Department {
     private Long Id;
     private String departmentName;
     private String departmentDescription;
+    @Column(nullable = false, unique = true)
     private String departmentCode;
-
-
 
 }

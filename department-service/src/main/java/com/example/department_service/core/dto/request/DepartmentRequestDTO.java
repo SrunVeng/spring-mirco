@@ -1,6 +1,6 @@
-package com.example.department_service.application.dto.response;
+package com.example.department_service.core.dto.request;
 
-
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,9 +10,12 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class DepartmentDetailsResponseVO {
+public class DepartmentRequestDTO {
 
+    @NotEmpty
     private String departmentName;
     private String departmentDescription;
+    @NotEmpty
     private String departmentCode;
+
 }

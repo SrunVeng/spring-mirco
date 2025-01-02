@@ -1,6 +1,5 @@
 package com.example.department_service.core.dto.response;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,10 +9,8 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public class DepartmentDetailsResponseDTO {
+public class DepartmentResponseDTO {
 
     private  String departmentName;
-    private  String departmentDescription;
-    private  String departmentCode;
 
 }
