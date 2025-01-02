@@ -26,4 +26,9 @@ public interface DepartmentVOMapper {
     List<DepartmentDetailsResponseVO> toDepartmentDetailsResponseVO(List<DepartmentDetailsResponseDTO> departmentDetailsResponseDTO);
     DepartmentResponseVO toDepartmentResponseVO(DepartmentResponseDTO departmentResponseDTO);
 
+
+
+
+
+
 }
