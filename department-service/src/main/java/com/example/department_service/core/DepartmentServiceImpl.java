@@ -53,7 +53,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         if (departmentRepository.isExistsByDepartmentCode(departmentRequestDTO.getDepartmentCode())){
             throw new RuntimeException("Department code already exists");
         }
-        Department department =
+
     }
 
 }
