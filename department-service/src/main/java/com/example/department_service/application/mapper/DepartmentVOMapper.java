@@ -1,15 +1,10 @@
 package com.example.department_service.application.mapper;
 
 
-import com.example.department_service.application.dto.request.DepartmentRequestVO;
 import com.example.department_service.application.dto.response.DepartmentDetailsResponseVO;
-import com.example.department_service.application.dto.response.DepartmentResponseVO;
-import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
-import com.example.department_service.core.dto.response.DepartmentResponseDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.NullValuePropertyMappingStrategy;
-import org.mapstruct.ReportingPolicy;
+import com.example.department_service.infrastructure.entity.Department;
+import org.mapstruct.*;
 
 import java.util.List;
 
@@ -18,13 +13,17 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface DepartmentVOMapper {
 
-
-//    @Mapping(target = "departmentName", source = "departmentName")
-//    @Mapping(target = "description", source = "departmentDescription")
-//    @Mapping(target = "code", source = "departmentCode")
+    @IterableMapping(qualifiedByName = "mapDepartment")
     List<DepartmentDetailsResponseVO> toDepartmentDetailsResponseVO(List<DepartmentDetailsResponseDTO> departmentDetailsResponseDTO);
-    DepartmentResponseVO toDepartmentResponseVO(DepartmentResponseDTO departmentResponseDTO);
-    DepartmentRequestVO toDepartmentRequestVO(DepartmentRequestDTO departmentRequestDTO);
+
+    @Named("mapDepartment")
+    @Mapping(target = "departmentName", source = "departmentName")
+    @Mapping(target = "description", source = "departmentDescription")
+    @Mapping(target = "code", source = "departmentCode")
+    DepartmentDetailsResponseVO mapDepartment(DepartmentDetailsResponseDTO departmentDetailsResponseDTO);
+
+
+
 
 
 }
