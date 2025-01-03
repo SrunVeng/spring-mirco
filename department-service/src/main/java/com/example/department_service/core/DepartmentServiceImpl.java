@@ -1,6 +1,7 @@
 package com.example.department_service.core;
 
 
+import com.example.department_service.common.exception.ResourceNotFoundException;
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
@@ -33,28 +34,24 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentResponseDTO getDepartmentNameById(Long id) {
-        Department department = departmentRepository.findById(id).orElseThrow() ;
+        Department department = departmentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Department", "id", id));
+        ;
         return departmentMapper.toDepartmentResponseDTO(department);
     }
 
     @Override
     public DepartmentResponseDTO getDepartmentByCode(String code) {
-//        Department department = departmentRepository.findByDepartmentCode(code);
-//
-//        ResponseEntity<EmployeeDetailsResponseDTO> employeeDetailsResponseDTOResponseEntity =
-//                restTemplate.getForEntity("http://localhost:8081/employees/" + department.getEmployeeId(), EmployeeDetailsResponseDTO.class);
-//
-//        employeeDetailsResponseDTOResponseEntity.getBody();
-//
-//        return departmentMapper.toDepartmentResponseDTO(department);
-        return null;
+        if (!departmentRepository.existsByDepartmentCode(code)) {
+            throw new ResourceNotFoundException("Department", "code", code);
+        }
+        return departmentMapper.toDepartmentResponseDTO(departmentRepository.findByDepartmentCode(code));
     }
 
     @Override
     public DepartmentResponseDTO createDepartment(DepartmentRequestDTO departmentRequestDTO) {
 
         if (departmentRepository.existsByDepartmentCode(departmentRequestDTO.getDepartmentCode())) {
-            throw new RuntimeException("Department code already exists");
+            throw new ResourceNotFoundException("Department", "departmentCode", departmentRequestDTO.getDepartmentCode());
         }
 
         // Map DTO to Entity

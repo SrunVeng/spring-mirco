@@ -1,11 +1,14 @@
 package com.example.department_service.common.exception;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+@Getter
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 public class FieldAlreadyExistsException extends RuntimeException {
 
+    // Getters for the fields (optional)
     private String fieldName;
     private String fieldValue;
 
@@ -15,12 +18,4 @@ public class FieldAlreadyExistsException extends RuntimeException {
         this.fieldValue = fieldValue;
     }
 
-    // Getters for the fields (optional)
-    public String getFieldName() {
-        return fieldName;
-    }
-
-    public String getFieldValue() {
-        return fieldValue;
-    }
 }
