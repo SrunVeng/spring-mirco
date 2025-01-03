@@ -2,6 +2,9 @@ spring:
   application:
     name: department-service
 
+server:
+  port: 8081
+
   datasource:
     url: jdbc:h2:mem:employee
     driver-class-name: org.h2.Driver
@@ -12,5 +15,3 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-  server:
-    port: 8081

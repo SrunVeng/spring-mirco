@@ -28,7 +28,7 @@ public class DataInit {
     public void Init() {
 
 
-        ResponseEntity<Department> ITDepartmentEntity = restTemplate.getForEntity("http://localhost:8080/departments/1", Department.class);
+        ResponseEntity<Department> ITDepartmentEntity = restTemplate.getForEntity("http://localhost:8080/api/v1/departments/1", Department.class);
         Department ITDepartment = ITDepartmentEntity.getBody();
         Department ITDep = departmentRepository.save(ITDepartment);
 

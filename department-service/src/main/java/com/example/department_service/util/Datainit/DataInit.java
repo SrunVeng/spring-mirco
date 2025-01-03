@@ -13,7 +13,6 @@ public class DataInit {
 
     private final DepartmentRepository departmentRepository;
 
-
     @PostConstruct
     public void init() {
         Department department1 = Department.builder()
@@ -41,6 +40,7 @@ public class DataInit {
                 .departmentDescription("SALES Department")
                 .departmentName("SALES")
                 .build();
+
 
         departmentRepository.saveAll(List.of(department1, department2, department3, department4, department5));
     }

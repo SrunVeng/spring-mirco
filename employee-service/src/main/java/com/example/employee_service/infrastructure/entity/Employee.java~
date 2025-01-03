@@ -23,7 +23,7 @@ public class Employee {
     private Long Id;
     private String firstName;
     private String lastName;
-    @Column(nullable = true, unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
 
@@ -32,11 +32,11 @@ public class Employee {
     private Department department;
 
     // free writing when set
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String jobTitle;
 
     // make enum ( Chief, Head, Senior Manager, Manager, Senior Associate, Associate, Junior Associate,Apprentice)
-    @Column(nullable = true)
+    @Column(nullable = false)
     private JobGrade jobGrade;
 
 

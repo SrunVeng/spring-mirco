@@ -1,8 +1,8 @@
 spring:
   application:
     name: department-service
-  server:
-    port: 8080
+server:
+  port: 8080
 
 
   datasource:
