@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name="departments")
+@Table(name="employees")
 @ToString
 public class Employee {
 
@@ -21,7 +21,7 @@ public class Employee {
     private Long Id;
     private String firstName;
     private String lastName;
-    @Column(nullable = true, unique = true)
+    @Column( unique = true)
     private String email;
 
 
@@ -29,12 +29,8 @@ public class Employee {
     @JoinColumn(name = "department_id")
     private Department department;
 
-    // free writing when set
-    @Column(nullable = true)
-    private String jobTitle;
 
-    // make enum ( Chief, Head, Senior Manager, Manager, Senior Associate, Associate, Junior Associate,Apprentice)
-    @Column(nullable = true)
+    private String jobTitle;
     private JobGrade jobGrade;
 
 

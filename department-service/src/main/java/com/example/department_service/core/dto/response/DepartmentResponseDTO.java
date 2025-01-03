@@ -11,7 +11,8 @@ import lombok.ToString;
 @ToString
 public class DepartmentResponseDTO {
 
-    private  String departmentName;
-    private EmployeeDetailsResponseDTO employeeDetailsResponseDTO;
+    private String departmentName;
+    private String departmentDescription;
+    private String departmentCode;
 
 }

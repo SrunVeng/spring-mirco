@@ -1,5 +1,4 @@
-package com.example.department_service.application;
-
+package com.example.employee_service.application;
 
 
 import com.example.department_service.application.mapper.DepartmentVOMapper;

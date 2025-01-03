@@ -12,6 +12,7 @@ import lombok.ToString;
 public class DepartmentResponseVO {
 
     private String departmentName;
-
+    private String departmentDescription;
+    private String departmentCode;
 
 }

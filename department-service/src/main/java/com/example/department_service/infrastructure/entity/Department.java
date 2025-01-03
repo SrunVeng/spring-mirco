@@ -22,9 +22,11 @@ public class Department {
     private Long Id;
     private String departmentName;
     private String departmentDescription;
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String departmentCode;
 
+    @OneToMany
+    private List<Employee> employees;
 
 
 }

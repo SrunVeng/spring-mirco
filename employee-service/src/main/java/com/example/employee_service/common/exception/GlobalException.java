@@ -1,7 +1,6 @@
 package com.example.employee_service.common.exception;
 
-import com.example.department_service.common.exception.FieldAlreadyExistsException;
-import com.example.department_service.common.exception.ResourceNotFoundException;
+
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
