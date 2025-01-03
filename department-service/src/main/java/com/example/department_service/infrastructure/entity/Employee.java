@@ -1,6 +1,7 @@
 package com.example.department_service.infrastructure.entity;
 
 
+import com.example.department_service.common.enumeration.JobGrade;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -34,7 +35,7 @@ public class Employee {
 
     // make enum ( Chief, Head, Senior Manager, Manager, Senior Associate, Associate, Junior Associate,Apprentice)
     @Column(nullable = false)
-    private String jobGrade;
+    private JobGrade jobGrade;
 
 
 

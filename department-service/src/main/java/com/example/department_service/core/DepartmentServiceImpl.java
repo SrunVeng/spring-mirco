@@ -6,6 +6,7 @@ import com.example.department_service.core.dto.response.DepartmentDetailsRespons
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
 import com.example.department_service.core.dto.response.EmployeeDetailsResponseDTO;
 import com.example.department_service.core.mapper.DepartmentMapper;
+import com.example.department_service.infrastructure.entity.Department;
 import com.example.department_service.infrastructure.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -38,14 +39,15 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public DepartmentResponseDTO getDepartmentByCode(String code) {
-        Department department = departmentRepository.findByDepartmentCode(code);
-
-        ResponseEntity<EmployeeDetailsResponseDTO> employeeDetailsResponseDTOResponseEntity =
-                restTemplate.getForEntity("http://localhost:8081/employees/" + department.getEmployeeId(), EmployeeDetailsResponseDTO.class);
-
-        employeeDetailsResponseDTOResponseEntity.getBody();
-
-        return departmentMapper.toDepartmentResponseDTO(department);
+//        Department department = departmentRepository.findByDepartmentCode(code);
+//
+//        ResponseEntity<EmployeeDetailsResponseDTO> employeeDetailsResponseDTOResponseEntity =
+//                restTemplate.getForEntity("http://localhost:8081/employees/" + department.getEmployeeId(), EmployeeDetailsResponseDTO.class);
+//
+//        employeeDetailsResponseDTOResponseEntity.getBody();
+//
+//        return departmentMapper.toDepartmentResponseDTO(department);
+        return null;
     }
 
     @Override

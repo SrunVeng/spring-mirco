@@ -1,5 +1,6 @@
 package com.example.department_service.util.Datainit;
 
+import com.example.department_service.infrastructure.entity.Department;
 import com.example.department_service.infrastructure.repository.DepartmentRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;

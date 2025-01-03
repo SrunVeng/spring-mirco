@@ -26,7 +26,5 @@ public class Department {
     private String departmentCode;
 
 
-    @OneToMany
-    private List<Employee> employees;
 
 }

@@ -6,13 +6,8 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface DepartmentRepository extends JpaRepository<Department,Long> {
-   // {ReturnType} findBy{attributeName}(String attributeValue);
-
-    Department findByDepartmentCode(String departmentCode);
-    Boolean existsByDepartmentCode(String departmentCode);
-
-
+public interface EmployeeRepository extends JpaRepository<Department, Long> {
+    // {ReturnType} findBy{attributeName}(String attributeValue);
 
 
 }

@@ -1,7 +1,6 @@
-package com.example.employee_service.application.dto.response;
+package com.example.employee_service.core.dto.response;
 
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
