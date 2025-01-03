@@ -6,7 +6,6 @@ import com.example.department_service.core.dto.response.DepartmentDetailsRespons
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
 import com.example.department_service.core.dto.response.EmployeeDetailsResponseDTO;
 import com.example.department_service.core.mapper.DepartmentMapper;
-import com.example.department_service.infrastructure.entity.Department;
 import com.example.department_service.infrastructure.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

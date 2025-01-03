@@ -1,10 +1,8 @@
-package com.example.employee_service.infrastructure.entity;
+package com.example.department_service.infrastructure.entity;
 
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.math.BigDecimal;
 
 @Getter
 @Setter

@@ -1,6 +1,5 @@
 package com.example.department_service.infrastructure.repository;
 
-import com.example.department_service.infrastructure.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
