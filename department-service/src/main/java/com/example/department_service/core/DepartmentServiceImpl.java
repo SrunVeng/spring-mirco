@@ -1,6 +1,7 @@
 package com.example.department_service.core;
 
 
+import com.example.department_service.common.exception.FieldAlreadyExistsException;
 import com.example.department_service.common.exception.ResourceNotFoundException;
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
@@ -51,7 +52,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     public DepartmentResponseDTO createDepartment(DepartmentRequestDTO departmentRequestDTO) {
 
         if (departmentRepository.existsByDepartmentCode(departmentRequestDTO.getDepartmentCode())) {
-            throw new ResourceNotFoundException("Department", "departmentCode", departmentRequestDTO.getDepartmentCode());
+            throw new FieldAlreadyExistsException("departmentCode", departmentRequestDTO.getDepartmentCode());
         }
 
         // Map DTO to Entity
