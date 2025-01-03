@@ -4,6 +4,7 @@ package com.example.employee_service.infrastructure.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -25,8 +26,5 @@ public class Department {
     @Column(nullable = true, unique = true)
     private String departmentCode;
 
-
-    @OneToMany
-    private List<Employee> employees;
 
 }

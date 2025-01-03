@@ -6,12 +6,10 @@ import com.example.department_service.common.exception.ResourceNotFoundException
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentDetailsResponseDTO;
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
-import com.example.department_service.core.dto.response.EmployeeDetailsResponseDTO;
 import com.example.department_service.core.mapper.DepartmentMapper;
 import com.example.department_service.infrastructure.entity.Department;
 import com.example.department_service.infrastructure.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 

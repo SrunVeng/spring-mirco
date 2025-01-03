@@ -1,23 +1,24 @@
-package com.example.employee_service.core.mapper;
+package com.example.employee_service.application.mapper;
 
 
-
+import com.example.employee_service.application.dto.response.EmployeeDeatilsResponseVO;
 import com.example.employee_service.core.dto.response.EmployeeDetailsResponseDTO;
-import com.example.employee_service.infrastructure.entity.Department;
-import com.example.employee_service.infrastructure.entity.Employee;
 import org.mapstruct.Mapper;
+
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;
 
 import java.util.List;
 
+
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface EmployeeMapper {
+public interface EmployeeVOMapper {
 
 
-        List<EmployeeDetailsResponseDTO> toListEmployeeDetailsResponseDTO(List<Employee> employees);
+    List<EmployeeDeatilsResponseVO> toListEmployeeDetailsResponseVO(List<EmployeeDetailsResponseDTO> employeeDetailsResponseDTO);
+
 
 
 }

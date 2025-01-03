@@ -1,6 +1,8 @@
-package com.example.department_service.core.dto.response;
+package com.example.employee_service.core.dto.response;
 
 
+import com.example.employee_service.common.enumeration.JobGrade;
+import com.example.employee_service.infrastructure.entity.Department;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,6 +18,9 @@ public class EmployeeDetailsResponseDTO {
     private String firstName;
     private String lastName;
     private String email;
+    private Long departmentId;
+    private String jobTitle;
+    private JobGrade jobGrade;
 
 
 }

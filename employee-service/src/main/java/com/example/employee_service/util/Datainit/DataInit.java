@@ -35,7 +35,7 @@ public class DataInit {
         employee2.setEmail("alicesmith@me.com");
         employee2.setJobTitle("HR Manager");
         employee2.setJobGrade(JobGrade.MANAGER);
-        employee2.setDepartment(HRDep);
+        employee2.setDepartmentId(HRDep.getId());
         employeeRepository.save(employee2);
 
         Employee employee3 = new Employee();
@@ -44,7 +44,7 @@ public class DataInit {
         employee3.setEmail("bobjohnson@me.com");
         employee3.setJobTitle("HR Specialist");
         employee3.setJobGrade(JobGrade.ASSOCIATE);
-        employee3.setDepartment(HRDep);
+        employee3.setDepartmentId(HRDep.getId());
         employeeRepository.save(employee3);
 
         Employee employee4 = new Employee();
@@ -53,7 +53,7 @@ public class DataInit {
         employee4.setEmail("charliebrown@me.com");
         employee4.setJobTitle("Finance Director");
         employee4.setJobGrade(JobGrade.HEAD);
-        employee4.setDepartment(FinanceDep);
+        employee4.setDepartmentId(FinanceDep.getId());
         employeeRepository.save(employee4);
 
         Employee employee5 = new Employee();
@@ -62,7 +62,7 @@ public class DataInit {
         employee5.setEmail("davidwilson@me.com");
         employee5.setJobTitle("Finance Analyst");
         employee5.setJobGrade(JobGrade.SENIOR_ASSOCIATE);
-        employee5.setDepartment(FinanceDep);
+        employee5.setDepartmentId(FinanceDep.getId());
         employeeRepository.save(employee5);
 
         Employee employee6 = new Employee();
@@ -71,7 +71,7 @@ public class DataInit {
         employee6.setEmail("evedavis@me.com");
         employee6.setJobTitle("Audit Manager");
         employee6.setJobGrade(JobGrade.SENIOR_MANAGER);
-        employee6.setDepartment(AuditDep);
+        employee6.setDepartmentId(AuditDep.getId());
         employeeRepository.save(employee6);
 
         Employee employee7 = new Employee();
@@ -80,7 +80,7 @@ public class DataInit {
         employee7.setEmail("frankmiller@me.com");
         employee7.setJobTitle("Audit Specialist");
         employee7.setJobGrade(JobGrade.ASSOCIATE);
-        employee7.setDepartment(AuditDep);
+        employee7.setDepartmentId(AuditDep.getId());
         employeeRepository.save(employee7);
 
         Employee employee8 = new Employee();
@@ -89,7 +89,7 @@ public class DataInit {
         employee8.setEmail("gracemoore@me.com");
         employee8.setJobTitle("Sales Executive");
         employee8.setJobGrade(JobGrade.SENIOR_ASSOCIATE);
-        employee8.setDepartment(SalesDep);
+        employee8.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee8);
 
         Employee employee9 = new Employee();
@@ -98,7 +98,7 @@ public class DataInit {
         employee9.setEmail("hanktaylor@me.com");
         employee9.setJobTitle("Sales Associate");
         employee9.setJobGrade(JobGrade.ASSOCIATE);
-        employee9.setDepartment(SalesDep);
+        employee8.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee9);
 
         Employee employee10 = new Employee();
@@ -107,7 +107,7 @@ public class DataInit {
         employee10.setEmail("ivyanderson@me.com");
         employee10.setJobTitle("Sales Manager");
         employee10.setJobGrade(JobGrade.MANAGER);
-        employee10.setDepartment(SalesDep);
+        employee10.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee10);
 
         Employee employee11 = new Employee();
@@ -116,7 +116,7 @@ public class DataInit {
         employee11.setEmail("jackthomas@me.com");
         employee11.setJobTitle("Sales Director");
         employee11.setJobGrade(JobGrade.CHIEF);
-        employee11.setDepartment(SalesDep);
+        employee11.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee11);
 
         Employee employee12 = new Employee();
@@ -125,7 +125,7 @@ public class DataInit {
         employee12.setEmail("JosePhil@me.com");
         employee12.setJobTitle("Finance Assistant");
         employee12.setJobGrade(JobGrade.APPRENTICE);
-        employee12.setDepartment(SalesDep);
+        employee12.setDepartmentId(FinanceDep.getId());
         employeeRepository.save(employee12);
 
 

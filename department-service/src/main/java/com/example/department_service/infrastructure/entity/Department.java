@@ -25,8 +25,7 @@ public class Department {
     @Column(unique = true)
     private String departmentCode;
 
-    @OneToMany
-    private List<Employee> employees;
+
 
 
 }

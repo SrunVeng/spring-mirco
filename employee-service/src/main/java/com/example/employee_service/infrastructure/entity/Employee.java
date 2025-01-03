@@ -27,9 +27,7 @@ public class Employee {
     private String email;
 
 
-    @ManyToOne
-    @JoinColumn(name = "department_id")
-    private Department department;
+    private Long departmentId;
 
     // free writing when set
     @Column(nullable = true)
