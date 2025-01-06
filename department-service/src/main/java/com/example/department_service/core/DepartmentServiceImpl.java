@@ -43,6 +43,8 @@ public class DepartmentServiceImpl implements DepartmentService {
         if (!departmentRepository.existsByDepartmentCode(code)) {
             throw new ResourceNotFoundException("Department", "code", code);
         }
+
+
         return departmentMapper.toDepartmentResponseDTO(departmentRepository.findByDepartmentCode(code));
     }
 

@@ -1,5 +1,6 @@
 package com.example.payrollservice.core.mapper;
 
+
 import com.example.payrollservice.core.dto.response.EmployeeResponseDTO;
 import com.example.payrollservice.core.dto.response.PayrollDetailsResponseDTO;
 import com.example.payrollservice.infrastructure.entity.Employee;
@@ -15,6 +16,6 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface EmployeeMapper {
 
-    List<EmployeeResponseDTO> toEmployeeResponseDTO(List<Employee> employees);
+        List<Employee> fromListEmployeeDetailsResponseDTO(List<EmployeeResponseDTO> employeeResponseDTO);
 
 }
