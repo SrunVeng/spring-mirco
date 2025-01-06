@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Calculator {
 
 
-    private static String calculateBaseSalary(Employee employee) {
+    public static String calculateBaseSalary(Employee employee) {
         // Example calculation logic based on jobGrade
         BigDecimal baseSalary = switch (employee.getJobGrade()) {
             case CHIEF -> SalaryConfig.CHIEF_SALARY;
@@ -24,7 +24,7 @@ public class Calculator {
         return baseSalary.toString();
     }
 
-    private static String calculateNetSalary(Employee employee) {
+    public static String calculateNetSalary(Employee employee) {
         // Example logic for net salary calculation
         BigDecimal baseSalary = new BigDecimal(calculateBaseSalary(employee));
         BigDecimal pensionReduction = baseSalary.multiply(SalaryConfig.PENSION_RATE);

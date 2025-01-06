@@ -8,6 +8,7 @@ import com.example.payrollservice.core.mapper.EmployeeMapper;
 import com.example.payrollservice.infrastructure.entity.Employee;
 import com.example.payrollservice.infrastructure.repository.EmployeeRepository;
 import com.example.payrollservice.infrastructure.repository.PayrollRepository;
+import com.example.payrollservice.util.Calculator.Calculator;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
@@ -28,6 +29,7 @@ public class DataInit {
     private final RestTemplate restTemplate;
     private final EmployeeMapper employeeMapper;
     private final EmployeeVOMapper employeeVOMapper;
+    private final Calculator calculator;
 
     @PostConstruct
     public void Init() {
@@ -47,6 +49,9 @@ public class DataInit {
         );
         List<EmployeeResponseDTO> employeeResponseDTOS = employeeVOMapper.fromListEmployeeDetailsResponseVO(response.getBody());
         List<Employee> employees = employeeMapper.fromListEmployeeDetailsResponseDTO(employeeResponseDTOS);
+
+
+
         // Save each employee in the repository
         employeeRepository.saveAll(employees);
 
