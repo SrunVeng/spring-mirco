@@ -1,12 +1,14 @@
 package com.example.payrollservice.core.dto.response;
 
 import com.example.payrollservice.common.enumeration.JobGrade;
+import jakarta.persistence.Column;
 import lombok.*;
+
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@ToString
 public class EmployeeResponseDTO {
 
     private Long Id;
@@ -15,4 +17,6 @@ public class EmployeeResponseDTO {
     private String email;
     private String jobTitle;
     private JobGrade jobGrade;
+
+
 }
