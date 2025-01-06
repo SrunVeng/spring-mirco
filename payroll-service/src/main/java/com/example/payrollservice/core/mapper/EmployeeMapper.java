@@ -1,6 +1,6 @@
 package com.example.payrollservice.core.mapper;
 
-
+import com.example.payrollservice.core.dto.response.EmployeeResponseDTO;
 import com.example.payrollservice.core.dto.response.PayrollDetailsResponseDTO;
 import com.example.payrollservice.infrastructure.entity.Employee;
 import com.example.payrollservice.infrastructure.entity.Payroll;
@@ -13,7 +13,8 @@ import java.util.List;
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface PayrollMapper {
+public interface EmployeeMapper {
 
-        List<PayrollDetailsResponseDTO> toPayrollDetailsResponseDTO(List<Payroll> payroll);
+    List<EmployeeResponseDTO> toEmployeeResponseDTO(List<Employee> employees);
+
 }
