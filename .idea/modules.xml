@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/department-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/department-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/employee-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/employee-service.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/payroll-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/payroll-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springboot-microservices.iml" filepath="$PROJECT_DIR$/.idea/springboot-microservices.iml" />
     </modules>
   </component>
