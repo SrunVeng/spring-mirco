@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
+import java.util.Optional;
+
 
 @Component
 @RequiredArgsConstructor
@@ -18,6 +20,9 @@ public class DataInit {
     private final PayrollRepository payrollRepository;
     private final EmployeeRepository employeeRepository;
     private final RestTemplate restTemplate;
+    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(DataInit.class);
+
+
 
     @PostConstruct
     public void Init() {
@@ -29,23 +34,37 @@ public class DataInit {
         String employeeApiUrl = "http://localhost:8081/api/v1/employees/all"; // Example endpoint
         Employee[] employees = restTemplate.getForObject(employeeApiUrl, Employee[].class);
 
-        if (employees != null) {
-            for (Employee employee : employees) {
-                // Save employees to local repository
-                employeeRepository.save(employee);
+        for (Employee employee : employees) {
+            Optional<Employee> existingEmployee = employeeRepository.findById(employee.getId());
+            if (existingEmployee.isPresent()) {
+                Employee updatedEmployee = existingEmployee.get();
+                updatedEmployee.setFirstName(employee.getFirstName());
+                updatedEmployee.setLastName(employee.getLastName());
+                updatedEmployee.setEmail(employee.getEmail());
+                updatedEmployee.setJobTitle(employee.getJobTitle());
+                updatedEmployee.setJobGrade(employee.getJobGrade());
+                employeeRepository.save(updatedEmployee);
+            } else {
 
-                // Calculate payroll details
-                Payroll payroll = Payroll.builder()
-                        .employeeId(employee.getId())
-                        .baseSalary(calculateBaseSalary(employee))
-                        .pensionFundReduce("5%") // Example static value
-                        .taxReduce("10%") // Example static value
-                        .netSalary(calculateNetSalary(employee))
-                        .build();
-
-                // Save payroll to repository
-                payrollRepository.save(payroll);
+                try {
+                    Employee employee1 = new Employee();
+                    employeeRepository.save(employee1);
+                } catch (Exception e) {
+                    log.error("Failed to save employee: {}", employee, e);
+                    throw e; // Rethrow if needed
+                }
             }
+
+            // Calculate payroll details
+            Payroll payroll = Payroll.builder()
+                    .employeeId(employee.getId())
+                    .baseSalary(calculateBaseSalary(employee))
+                    .pensionFundReduce("5%")
+                    .taxReduce("10%")
+                    .netSalary(calculateNetSalary(employee))
+                    .build();
+
+            payrollRepository.save(payroll);
         }
     }
 
