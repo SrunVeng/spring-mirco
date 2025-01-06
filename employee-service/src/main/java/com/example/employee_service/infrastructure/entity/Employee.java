@@ -1,6 +1,5 @@
 package com.example.employee_service.infrastructure.entity;
 
-
 import com.example.employee_service.common.enumeration.JobGrade;
 import jakarta.persistence.*;
 import lombok.*;

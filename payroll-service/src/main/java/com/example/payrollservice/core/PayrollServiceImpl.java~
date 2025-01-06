@@ -1,0 +1,20 @@
+package com.example.payrollservice.core;
+
+
+import com.example.payrollservice.core.mapper.PayrollMapper;
+import com.example.payrollservice.infrastructure.repository.PayrollRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class PayrollServiceImpl implements PayrollService {
+
+private final PayrollRepository payrollRepository;
+private final PayrollMapper payrollMapper;
+
+
+
+}
+
+

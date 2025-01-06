@@ -16,6 +16,7 @@ import lombok.ToString;
 @ToString
 public class EmployeeDeatilsResponseVO {
 
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;

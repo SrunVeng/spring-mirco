@@ -1,8 +1,8 @@
 package com.example.payrollservice.application.mapper;
 
 
-import com.example.employee_service.application.dto.response.EmployeeDeatilsResponseVO;
-import com.example.employee_service.core.dto.response.EmployeeDetailsResponseDTO;
+import com.example.payrollservice.application.dto.response.PayrollDetailsResponseVO;
+import com.example.payrollservice.core.dto.response.PayrollDetailsResponseDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 import org.mapstruct.ReportingPolicy;
@@ -13,11 +13,7 @@ import java.util.List;
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         unmappedTargetPolicy = ReportingPolicy.IGNORE)
-public interface EmployeeVOMapper {
+public interface PayrollVOMapper {
 
-
-    List<EmployeeDeatilsResponseVO> toListEmployeeDetailsResponseVO(List<EmployeeDetailsResponseDTO> employeeDetailsResponseDTO);
-
-
-
+    List<PayrollDetailsResponseVO> toListPayrollDetailsResponseVO(List<PayrollDetailsResponseDTO> payrollDetailsResponseDTO);
 }

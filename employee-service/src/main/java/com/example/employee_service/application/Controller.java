@@ -7,7 +7,6 @@ package com.example.employee_service.application;
 import com.example.employee_service.application.dto.response.EmployeeDeatilsResponseVO;
 import com.example.employee_service.application.mapper.EmployeeVOMapper;
 import com.example.employee_service.core.EmployeeService;
-import com.example.employee_service.core.mapper.EmployeeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,16 +22,8 @@ public class Controller {
     private final EmployeeService employeeService;
     private final EmployeeVOMapper employeeVOMapper;
 
-
     @GetMapping("/all")
     public List<EmployeeDeatilsResponseVO> getAllEmployees() {
         return employeeVOMapper.toListEmployeeDetailsResponseVO(employeeService.getAllEmployees());
     }
-
-
-
-
-
-
-
 }

@@ -1,7 +1,7 @@
 package com.example.payrollservice.common.exception;
 
 
-import com.example.employee_service.common.exception.ErrorDetails;
+import com.example.payrollservice.common.exception.ErrorDetails;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

@@ -15,6 +15,7 @@ import lombok.ToString;
 public class EmployeeDetailsResponseDTO {
 
 
+    private Long Id;
     private String firstName;
     private String lastName;
     private String email;
