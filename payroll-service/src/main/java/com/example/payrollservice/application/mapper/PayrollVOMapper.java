@@ -16,4 +16,5 @@ import java.util.List;
 public interface PayrollVOMapper {
 
     List<PayrollDetailsResponseVO> toListPayrollDetailsResponseVO(List<PayrollDetailsResponseDTO> payrollDetailsResponseDTO);
+
 }
