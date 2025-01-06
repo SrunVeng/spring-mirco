@@ -1,7 +1,9 @@
 package com.example.department_service.util.Datainit;
 
+import com.example.department_service.common.constance.DepartmentConstance;
 import com.example.department_service.infrastructure.entity.Department;
 import com.example.department_service.infrastructure.repository.DepartmentRepository;
+import com.example.department_service.util.Random.CodeGenerator;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16,29 +18,29 @@ public class DataInit {
     @PostConstruct
     public void init() {
         Department department1 = Department.builder()
-                .departmentCode("H-001")
+                .departmentCode(CodeGenerator.departmentCodeGenerator(DepartmentConstance.HEAD_OFFICE))
                 .departmentDescription("IT Department")
-                .departmentName("IT")
+                .departmentName(DepartmentConstance.IT_DEPARTMENT)
                 .build();
         Department department2 = Department.builder()
-                .departmentCode("H-002")
+                .departmentCode(CodeGenerator.departmentCodeGenerator(DepartmentConstance.HEAD_OFFICE))
                 .departmentDescription("HR Department")
-                .departmentName("HR")
+                .departmentName(DepartmentConstance.HR_DEPARTMENT)
                 .build();
         Department department3 = Department.builder()
-                .departmentCode("H-003")
+                .departmentCode(CodeGenerator.departmentCodeGenerator(DepartmentConstance.HEAD_OFFICE))
                 .departmentDescription("FINANCE Department")
-                .departmentName("FINANCE")
+                .departmentName(DepartmentConstance.FINANCE_DEPARTMENT)
                 .build();
         Department department4 = Department.builder()
-                .departmentCode("H-004")
+                .departmentCode(CodeGenerator.departmentCodeGenerator(DepartmentConstance.HEAD_OFFICE))
                 .departmentDescription("AUDIT Department")
-                .departmentName("AUDIT")
+                .departmentName(DepartmentConstance.AUDIT_DEPARTMENT)
                 .build();
         Department department5 = Department.builder()
-                .departmentCode("B-005")
+                .departmentCode(CodeGenerator.departmentCodeGenerator(DepartmentConstance.BRANCH))
                 .departmentDescription("SALES Department")
-                .departmentName("SALES")
+                .departmentName(DepartmentConstance.SALES_DEPARTMENT)
                 .build();
 
 

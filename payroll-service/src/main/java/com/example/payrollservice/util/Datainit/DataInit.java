@@ -6,6 +6,7 @@ import com.example.payrollservice.application.mapper.EmployeeVOMapper;
 import com.example.payrollservice.core.dto.response.EmployeeResponseDTO;
 import com.example.payrollservice.core.mapper.EmployeeMapper;
 import com.example.payrollservice.infrastructure.entity.Employee;
+import com.example.payrollservice.infrastructure.entity.Payroll;
 import com.example.payrollservice.infrastructure.repository.EmployeeRepository;
 import com.example.payrollservice.infrastructure.repository.PayrollRepository;
 import jakarta.annotation.PostConstruct;
@@ -49,6 +50,7 @@ public class DataInit {
         List<Employee> employees = employeeMapper.fromListEmployeeDetailsResponseDTO(employeeResponseDTOS);
         // Save each employee in the repository
         employeeRepository.saveAll(employees);
+
 
     }
 }
