@@ -6,6 +6,7 @@ import com.example.payrollservice.application.mapper.EmployeeVOMapper;
 import com.example.payrollservice.core.dto.response.EmployeeResponseDTO;
 import com.example.payrollservice.core.mapper.EmployeeMapper;
 import com.example.payrollservice.infrastructure.entity.Employee;
+import com.example.payrollservice.infrastructure.entity.Payroll;
 import com.example.payrollservice.infrastructure.repository.EmployeeRepository;
 import com.example.payrollservice.infrastructure.repository.PayrollRepository;
 import com.example.payrollservice.util.Calculator.Calculator;
@@ -54,6 +55,7 @@ public class DataInit {
 
         // Save each employee in the repository
         employeeRepository.saveAll(employees);
+
 
     }
 }
