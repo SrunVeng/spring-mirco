@@ -60,7 +60,6 @@ public class DataInit {
             String baseSalary = calculator.calculateBaseSalary(employee);
             String netSalary = calculator.calculateNetSalary(employee);
             String taxReduce = calculator.calculateTaxReduce(employee);
-            String pensionFundReduce = calculator.calculatePensionFundReduce(employee);
 
             Payroll payroll = Payroll.builder()
                     .baseSalary(baseSalary)

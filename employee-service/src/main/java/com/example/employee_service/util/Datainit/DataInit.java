@@ -5,6 +5,7 @@ import com.example.employee_service.infrastructure.entity.Department;
 import com.example.employee_service.infrastructure.entity.Employee;
 import com.example.employee_service.infrastructure.repository.DepartmentRepository;
 import com.example.employee_service.infrastructure.repository.EmployeeRepository;
+import com.example.employee_service.util.Random.RandomBasicInfo;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,107 +29,104 @@ public class DataInit {
     public void Init() {
         DataFetching();
 
-
         Employee employee2 = new Employee();
-        employee2.setFirstName("Alice");
-        employee2.setLastName("Smith");
-        employee2.setEmail("alicesmith@me.com");
+        employee2.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee2.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee2.setEmail(RandomBasicInfo.generateRandomEmail());
         employee2.setJobTitle("HR Manager");
         employee2.setJobGrade(JobGrade.MANAGER);
         employee2.setDepartmentId(HRDep.getId());
         employeeRepository.save(employee2);
 
         Employee employee3 = new Employee();
-        employee3.setFirstName("Bob");
-        employee3.setLastName("Johnson");
-        employee3.setEmail("bobjohnson@me.com");
+        employee3.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee3.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee3.setEmail(RandomBasicInfo.generateRandomEmail());
         employee3.setJobTitle("HR Specialist");
         employee3.setJobGrade(JobGrade.ASSOCIATE);
         employee3.setDepartmentId(HRDep.getId());
         employeeRepository.save(employee3);
 
         Employee employee4 = new Employee();
-        employee4.setFirstName("Charlie");
-        employee4.setLastName("Brown");
-        employee4.setEmail("charliebrown@me.com");
+        employee4.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee4.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee4.setEmail(RandomBasicInfo.generateRandomEmail());
         employee4.setJobTitle("Finance Director");
         employee4.setJobGrade(JobGrade.HEAD);
         employee4.setDepartmentId(FinanceDep.getId());
         employeeRepository.save(employee4);
 
         Employee employee5 = new Employee();
-        employee5.setFirstName("David");
-        employee5.setLastName("Wilson");
-        employee5.setEmail("davidwilson@me.com");
+        employee5.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee5.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee5.setEmail(RandomBasicInfo.generateRandomEmail());
         employee5.setJobTitle("Finance Analyst");
         employee5.setJobGrade(JobGrade.SENIOR_ASSOCIATE);
         employee5.setDepartmentId(FinanceDep.getId());
         employeeRepository.save(employee5);
 
         Employee employee6 = new Employee();
-        employee6.setFirstName("Eve");
-        employee6.setLastName("Davis");
-        employee6.setEmail("evedavis@me.com");
+        employee6.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee6.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee6.setEmail(RandomBasicInfo.generateRandomEmail());
         employee6.setJobTitle("Audit Manager");
         employee6.setJobGrade(JobGrade.SENIOR_MANAGER);
         employee6.setDepartmentId(AuditDep.getId());
         employeeRepository.save(employee6);
 
         Employee employee7 = new Employee();
-        employee7.setFirstName("Frank");
-        employee7.setLastName("Miller");
-        employee7.setEmail("frankmiller@me.com");
+        employee7.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee7.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee7.setEmail(RandomBasicInfo.generateRandomEmail());
         employee7.setJobTitle("Audit Specialist");
         employee7.setJobGrade(JobGrade.ASSOCIATE);
         employee7.setDepartmentId(AuditDep.getId());
         employeeRepository.save(employee7);
 
         Employee employee8 = new Employee();
-        employee8.setFirstName("Grace");
-        employee8.setLastName("Moore");
-        employee8.setEmail("gracemoore@me.com");
+        employee8.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee8.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee8.setEmail(RandomBasicInfo.generateRandomEmail());
         employee8.setJobTitle("Sales Executive");
         employee8.setJobGrade(JobGrade.SENIOR_ASSOCIATE);
         employee8.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee8);
 
         Employee employee9 = new Employee();
-        employee9.setFirstName("Hank");
-        employee9.setLastName("Taylor");
-        employee9.setEmail("hanktaylor@me.com");
+        employee9.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee9.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee9.setEmail(RandomBasicInfo.generateRandomEmail());
         employee9.setJobTitle("Sales Associate");
         employee9.setJobGrade(JobGrade.ASSOCIATE);
         employee8.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee9);
 
         Employee employee10 = new Employee();
-        employee10.setFirstName("Ivy");
-        employee10.setLastName("Anderson");
-        employee10.setEmail("ivyanderson@me.com");
+        employee10.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee10.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee10.setEmail(RandomBasicInfo.generateRandomEmail());
         employee10.setJobTitle("Sales Manager");
         employee10.setJobGrade(JobGrade.MANAGER);
         employee10.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee10);
 
         Employee employee11 = new Employee();
-        employee11.setFirstName("Jack");
-        employee11.setLastName("Thomas");
-        employee11.setEmail("jackthomas@me.com");
+        employee11.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee11.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee11.setEmail(RandomBasicInfo.generateRandomEmail());
         employee11.setJobTitle("Sales Director");
         employee11.setJobGrade(JobGrade.CHIEF);
         employee11.setDepartmentId(SalesDep.getId());
         employeeRepository.save(employee11);
 
         Employee employee12 = new Employee();
-        employee12.setFirstName("Jose");
-        employee12.setLastName("Phil");
-        employee12.setEmail("JosePhil@me.com");
+        employee12.setFirstName(RandomBasicInfo.generateRandomFirstName());
+        employee12.setLastName(RandomBasicInfo.generateRandomLastName());
+        employee12.setEmail(RandomBasicInfo.generateRandomEmail());
         employee12.setJobTitle("Finance Assistant");
         employee12.setJobGrade(JobGrade.APPRENTICE);
         employee12.setDepartmentId(FinanceDep.getId());
         employeeRepository.save(employee12);
-
-
 
     }
 
