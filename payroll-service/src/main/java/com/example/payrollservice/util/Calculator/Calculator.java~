@@ -2,13 +2,9 @@ package com.example.payrollservice.util.Calculator;
 
 import com.example.payrollservice.common.constant.SalaryConfig;
 import com.example.payrollservice.infrastructure.entity.Employee;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-
-
-@Component
 public class Calculator {
         // Example calculation logic based on jobGrade
         private static String calculateBaseSalary(Employee employee) {

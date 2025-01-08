@@ -1,12 +1,10 @@
 package com.example.payrollservice.util.Datainit;
 
-
 import com.example.payrollservice.application.dto.response.EmployeeResponseVO;
 import com.example.payrollservice.application.mapper.EmployeeVOMapper;
 import com.example.payrollservice.core.dto.response.EmployeeResponseDTO;
 import com.example.payrollservice.core.mapper.EmployeeMapper;
 import com.example.payrollservice.infrastructure.entity.Employee;
-import com.example.payrollservice.infrastructure.entity.Payroll;
 import com.example.payrollservice.infrastructure.repository.EmployeeRepository;
 import com.example.payrollservice.infrastructure.repository.PayrollRepository;
 import com.example.payrollservice.util.Calculator.Calculator;
@@ -39,7 +37,7 @@ public class DataInit {
 
     public void DataFetching() {
         // Fetch employees from an external service
-        String employeeApiUrl = "http://localhost:9191/employee-service/api/v1/employees/all";
+        String employeeApiUrl = "http://localhost:8081/api/v1/employees/all";
         // Use ParameterizedTypeReference to deserialize the list of Employee objects
         ResponseEntity<List<EmployeeResponseVO>> response = restTemplate.exchange(
                 employeeApiUrl,
