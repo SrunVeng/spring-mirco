@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Component
 public class Calculator {
         // Example calculation logic based on jobGrade
-        private static String calculateBaseSalary(Employee employee) {
+        public String calculateBaseSalary(Employee employee) {
             // Example calculation logic based on jobGrade
             BigDecimal baseSalary = switch (employee.getJobGrade()) {
                 case CHIEF -> SalaryConfig.CHIEF_SALARY;
@@ -27,7 +27,19 @@ public class Calculator {
             return baseSalary.toString();
         }
 
-        private static String calculateNetSalary(Employee employee) {
+        public String calculatePensionFundReduce(Employee employee) {
+            BigDecimal baseSalary = new BigDecimal(calculateBaseSalary(employee));
+            BigDecimal pensionReduction = baseSalary.multiply(SalaryConfig.PENSION_RATE);
+            return pensionReduction.toString();
+        }
+
+        public String calculateTaxReduce(Employee employee) {
+            BigDecimal baseSalary = new BigDecimal(calculateBaseSalary(employee));
+            BigDecimal taxReduction = baseSalary.multiply(SalaryConfig.TAX_RATE);
+            return taxReduction.toString();
+        }
+
+        public String calculateNetSalary(Employee employee) {
             // Example logic for net salary calculation
             BigDecimal baseSalary = new BigDecimal(calculateBaseSalary(employee));
             BigDecimal pensionReduction = baseSalary.multiply(SalaryConfig.PENSION_RATE);
