@@ -22,7 +22,15 @@ spring:
 
 server:
   port: 8083
-
+management:
+  tracing:
+    enabled: true
+  observations:
+    enabled: true
+    http:
+      client:
+        requests:
+          enabled: true
 eureka:
   client:
     service-url:
