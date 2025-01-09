@@ -14,19 +14,27 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
-  zipkin:
-    enabled: true
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      probability: 1.0
 
 server:
   port: 8081
 
-zipkin:
-  enabled: true
-  base-url: http://localhost:9411
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # Ensure tracing spans are always sent
+  metrics:
+    export:
+      simple:
+        enabled: true # Default metrics
+      prometheus:
+        enabled: false # Enable Prometheus if needed
+micrometer:
+  tracing:
+    export:
+      zipkin:
+        enabled: true
+        endpoint: http://localhost:9411/api/v2/spans # Pointing to Zipkin's HTTP API
+
 
 eureka:
   client:

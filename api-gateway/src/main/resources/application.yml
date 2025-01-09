@@ -9,21 +9,27 @@ spring:
           lowerCaseServiceId: true
       default-filters:
         - StripPrefix=1 # This filter strips the first segment in the path
-  zipkin:
-    enabled: true
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-      probability: 1.0
 
 server:
   port: 9191
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0 # Ensure tracing spans are always sent
+  metrics:
+    export:
+      simple:
+        enabled: true # Default metrics
+      prometheus:
+        enabled: false # Enable Prometheus if needed
+micrometer:
+  tracing:
+    export:
+      zipkin:
+        enabled: true
+        endpoint: http://localhost:9411/api/v2/spans # Pointing to Zipkin's HTTP API
+
 
 logging:
   level:
