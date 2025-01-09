@@ -2,6 +2,8 @@ package com.example.department_service.util.Random;
 
 import com.example.department_service.common.constance.DepartmentConstance;
 
+
+
 public class CodeGenerator {
 
     public static String departmentCodeGenerator(String departmentType) {

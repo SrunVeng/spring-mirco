@@ -9,7 +9,9 @@ import com.example.department_service.core.DepartmentService;
 
 import com.example.department_service.core.dto.request.DepartmentRequestDTO;
 import com.example.department_service.core.dto.response.DepartmentResponseDTO;
+import com.example.department_service.core.kafka.KafkaProducerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +23,10 @@ public class Controller {
 
     private final DepartmentService departmentService;
     private final DepartmentVOMapper departmentVoMapper;
+    private final KafkaProducerService kafkaProducerService;
+
+    @Value("${custom.kafka.department-topic-one}")
+    private String topicNameOne;
 
     @GetMapping("/all")
     public List<DepartmentDetailsResponseVO> getAllDepartmentsDetails() {
@@ -50,6 +56,12 @@ public class Controller {
 
         // Map DTO to VO
         return departmentVoMapper.toDepartmentResponseVO(departmentResponseDTO);
+    }
+
+
+    @GetMapping("/test/{message}")
+    public String test(@RequestParam ("message") String message) {
+        return kafkaProducerService.sendToDepartmentTopic(message);
     }
 
 
