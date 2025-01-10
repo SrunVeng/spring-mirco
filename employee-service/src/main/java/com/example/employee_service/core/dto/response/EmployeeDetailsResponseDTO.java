@@ -20,6 +20,8 @@ public class EmployeeDetailsResponseDTO {
     private String lastName;
     private String email;
     private Long departmentId;
+    private String departmentName;
+    private String departmentDescription;
     private String jobTitle;
     private JobGrade jobGrade;
 

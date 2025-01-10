@@ -27,6 +27,8 @@ public class Employee {
 
 
     private Long departmentId;
+    private String departmentName;
+    private String departmentDescription;
 
     // free writing when set
     @Column(nullable = true)

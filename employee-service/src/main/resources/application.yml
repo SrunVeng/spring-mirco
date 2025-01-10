@@ -19,6 +19,20 @@ server:
   port: 8081
 
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+    db:
+      enabled: true
+    diskspace:
+      enabled: true
   tracing:
     sampling:
       probability: 1.0 # Ensure tracing spans are always sent
@@ -28,6 +42,7 @@ management:
         enabled: true # Default metrics
       prometheus:
         enabled: false # Enable Prometheus if needed
+
 micrometer:
   tracing:
     export:
@@ -35,6 +50,18 @@ micrometer:
         enabled: true
         endpoint: http://localhost:9411/api/v2/spans # Pointing to Zipkin's HTTP API
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      employee-service:
+        register-health-indicator: true
+        failure-rate-threshold: 50
+        minimum-number-of-calls: 5
+        automatic-transition-from-open-to-half-open-enabled: true
+        wait-duration-in-open-state: 5s
+        permitted-number-of-calls-in-half-open-state: 3
+        sliding-window-size: 10
+        sliding-window-type: COUNT_BASED
 
 eureka:
   client:
